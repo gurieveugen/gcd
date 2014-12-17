@@ -77,53 +77,176 @@
                 showControls: false
             });*/
                 $(document).ready(function(){
-                    $("#slider1").AnySlider({
+                    var slider1 = $('#slider1').anyslider({
                         animation: "fade",
                         delay : 0,
                         speed : 1500,
-                        interval : 5000,
-                        bullets:false,
+                        interval : 0,
+                        showBullets :false,
                         showControls: false,
                         pauseOnHover: false,
-                        afterChange: function(){
-                           $("#slider2").AnySlider({
-                                animation: "fade",
-                                delay : 0,
-                                speed : 1500,
-                                interval : 5000,
-                                bullets:false,
-                                showControls: false,
-                                pauseOnHover: false,
-                                afterChange: function(){
-                                    $("#slider3").AnySlider({
-                                        animation: "fade",
-                                        delay : 0,
-                                        speed : 1500,
-                                        interval : 5000,
-                                        bullets:false,
-                                        showControls: false,
-                                        pauseOnHover: false,
-                                        afterChange: function(){
-                                            $("#slider4").AnySlider({
-                                                animation: "fade",
-                                                delay : 0,
-                                                speed : 1500,
-                                                interval : 5000,
-                                                bullets:false,
-                                                showControls: false,
-                                                pauseOnHover: false,
-                                            });
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                            
                     });
+                    var anyslider1 = slider1.data('anyslider');
+
+                    var slider2 = $('#slider2').anyslider({
+                        animation: "fade",
+                        delay : 0,
+                        speed : 1500,
+                        interval : 0,
+                        showBullets :false,
+                        showControls: false,
+                        pauseOnHover: false,
+                    });
+                    var anyslider2 = slider2.data('anyslider');
+
+                    var slider3 = $('#slider3').anyslider({
+                        animation: "fade",
+                        delay : 0,
+                        speed : 1500,
+                        interval : 0,
+                        showBullets :false,
+                        showControls: false,
+                        pauseOnHover: false,
+                    });
+                    var anyslider3 = slider3.data('anyslider');
+
+                    var slider4 = $('#slider4').anyslider({
+                        animation: "fade",
+                        delay : 0,
+                        speed : 1500,
+                        interval : 0,
+                        showBullets :false,
+                        showControls: false,
+                        pauseOnHover: false,
+                    });
+                    var anyslider4 = slider4.data('anyslider');
+                    setTimeout(function(){
+                        anyslider1.next();
+                    }, 5000);
+                    setTimeout(function(){
+                        anyslider3.next();
+                    }, 10000);
+                    setTimeout(function(){
+                        anyslider2.next();
+                    }, 15000);
+                    setTimeout(function(){
+                        anyslider4.next();
+                    }, 20000);
+
+                    setTimeout(function(){
+                        anyslider2.next();
+                    }, 25000);
+                    setTimeout(function(){
+                        anyslider3.next();
+                    }, 30000);
+                    setTimeout(function(){
+                        anyslider1.next();
+                    }, 35000);
+                    setTimeout(function(){
+                        anyslider4.next();
+                    }, 40000);
+
+                    setTimeout(function(){
+                        anyslider2.next();
+                    }, 45000);
+                    setTimeout(function(){
+                        anyslider1.next();
+                    }, 50000);
+                    setTimeout(function(){
+                        anyslider4.next();
+                    }, 55000);
+                    setTimeout(function(){
+                        anyslider3.next();
+                    }, 60000);
+
+                    setInterval(function(){
+                        setTimeout(function(){
+                            anyslider1.next();
+                        }, 5000);
+                        setTimeout(function(){
+                            anyslider3.next();
+                        }, 10000);
+                        setTimeout(function(){
+                            anyslider2.next();
+                        }, 15000);
+                        setTimeout(function(){
+                            anyslider4.next();
+                        }, 20000);
+
+                        setTimeout(function(){
+                            anyslider2.next();
+                        }, 25000);
+                        setTimeout(function(){
+                            anyslider3.next();
+                        }, 30000);
+                        setTimeout(function(){
+                            anyslider1.next();
+                        }, 35000);
+                        setTimeout(function(){
+                            anyslider4.next();
+                        }, 40000);
+
+                        setTimeout(function(){
+                            anyslider2.next();
+                        }, 45000);
+                        setTimeout(function(){
+                            anyslider1.next();
+                        }, 50000);
+                        setTimeout(function(){
+                            anyslider4.next();
+                        }, 55000);
+                        setTimeout(function(){
+                            anyslider3.next();
+                        }, 60000);
+                    }, 60000);
+                    
+                    // $("#slider1").anyslider({
+                    //     animation: "fade",
+                    //     delay : 0,
+                    //     speed : 1500,
+                    //     interval : 5000,
+                    //     bullets:false,
+                    //     showControls: false,
+                    //     pauseOnHover: false,
+                    //     afterChange: function(){
+                    //        $("#slider3").anyslider({
+                    //             animation: "fade",
+                    //             delay : 0,
+                    //             speed : 1500,
+                    //             interval : 5000,
+                    //             bullets:false,
+                    //             showControls: false,
+                    //             pauseOnHover: false,
+                    //             afterChange: function(){
+                    //                 $("#slider2").anyslider({
+                    //                     animation: "fade",
+                    //                     delay : 0,
+                    //                     speed : 1500,
+                    //                     interval : 5000,
+                    //                     bullets:false,
+                    //                     showControls: false,
+                    //                     pauseOnHover: false,
+                    //                     afterChange: function(){
+                    //                         $("#slider4").anyslider({
+                    //                             animation: "fade",
+                    //                             delay : 0,
+                    //                             speed : 1500,
+                    //                             interval : 5000,
+                    //                             bullets:false,
+                    //                             showControls: false,
+                    //                             pauseOnHover: false,
+                    //                         });
+                    //                     }
+                    //                 });
+                    //             }
+                    //         });
+                    //     }
+                            
+                    // });
                 });
             
 
-            $("#project_image_slider").AnySlider({});
+            $("#project_image_slider").anyslider({});
         </script>
         <?php wp_footer(); ?>
     </body>

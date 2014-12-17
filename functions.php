@@ -376,3 +376,24 @@ $meta_box_slider = new Admin\MetaBox(
     ), 
     $ccollection_gcd_projects
 );
+
+// ==============================================================
+// Actions & Filters
+// ==============================================================
+add_action( 'wp_enqueue_scripts', 'scriptsAndStyles' );
+
+// ==============================================================
+// Methods
+// ==============================================================
+function scriptsAndStyles()
+{
+    // ==============================================================
+    // Scripts
+    // ==============================================================
+    wp_enqueue_script('flexslider', get_template_directory_uri().'/js/jquery.flexslider-min.js');
+    wp_enqueue_script('main', get_template_directory_uri().'/js/main.js');
+    // ==============================================================
+    // Styles
+    // ==============================================================
+    wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css');
+}
