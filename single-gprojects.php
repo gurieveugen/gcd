@@ -100,7 +100,10 @@ foreach($terms as $term){
             </div>
             <div class="col-sm-4">
             <?php
-            $args = array('exclude'=>$tid);
+            $args = array(
+                'exclude' => $tid,
+                'order'   => 'DESC',
+            );
             $others = get_terms('gcd_groups',$args);
             ?>
                 <ul>

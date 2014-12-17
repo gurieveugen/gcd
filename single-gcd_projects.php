@@ -50,7 +50,7 @@ foreach($terms as $term){
                 <div class="content">
                     <?php the_title('<h3>','</h3>'); ?>
                     <p><span>Brief: </span><?php echo get_the_content(); ?> </p>
-                    <p><span>Rationale: </span><?php echo get_post_meta($post->ID, 'rationale', true); ?></p>
+                    <p><span>Rationale: </span><?php echo get_post_meta(get_the_id(), 'r_rational', true); ?></p>
                 </div>
                 <?php
 		    $arrow = get_template_directory_uri(). '/images/nav-arrow.png';

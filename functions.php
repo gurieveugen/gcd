@@ -346,5 +346,33 @@ function save_taxonomy_custom_meta( $term_id ) {
 add_action( 'edited_gcd_groups', 'save_taxonomy_custom_meta', 10, 2 );  
 add_action( 'create_gcd_groups', 'save_taxonomy_custom_meta', 10, 2 );
 
-require_once(get_template_directory().'/inc/project-metabox.php');
 require_once(get_template_directory().'/inc/gproject-metabox.php');
+
+
+// ==============================================================
+// REQUIRE
+// ==============================================================
+require_once 'includes/__.php';
+// ==============================================================
+// Controls Collection
+// ==============================================================
+$ccollection_gcd_projects = new Controls\ControlsCollection(
+    array(      
+        new Controls\Editor(
+            'Rational', 
+            array('default-value' => ''),
+            array('textarea_name' => 'rational')
+        ),
+    )
+);
+// ==============================================================
+// Meta Boxes
+// ==============================================================
+$meta_box_slider = new Admin\MetaBox(
+    'Rational box', 
+    array(
+        'post_type' => 'gcd_projects',
+        'prefix' => 'r_'
+    ), 
+    $ccollection_gcd_projects
+);
