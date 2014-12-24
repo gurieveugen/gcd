@@ -17,8 +17,8 @@
                                 </div>
                                 <div class="right">
                                     <span>Connect</span><div class="clear"></div>
-                                    <a href="https://www.facebook.com/greatcircledesign"><i class="fa fa-facebook"></i></a>
-                                    <a href="au.linkedin.com/pub/linda-grant/7/79/61a"><i class="fa fa-linkedin"></i></a>
+                                    <a target="_blank" href="https://www.facebook.com/greatcircledesign"><i class="fa fa-facebook"></i></a>
+                                    <a target="_blank" href="https://www.linkedin.com/profile/view?id=21063478&trk=nav_responsive_tab_profile_pic"><i class="fa fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="search">
