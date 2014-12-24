@@ -15,6 +15,9 @@ foreach($terms as $term){
     $slug = $term->slug;
     $desc = $term->description;
 }
+
+$rationale = (string) get_post_meta(get_the_id(), 'r_rational', true);
+$rationale = strlen(trim($rationale)) ? sprintf('<p><span>Rationale: </span>%s</p>', $rationale) : '';
 ?>
 <section class="gallery_block">
     <div class="container">
@@ -27,7 +30,13 @@ foreach($terms as $term){
                 <div id="project_image_slider">
                    
                     <?php 
-                        $args = array('post_type'=>'attachment','post_parent' => $post->ID,'posts_per_page'=>-1,'order'=>'asc','orderby'=>'id');
+                        $args = array(
+                            'post_type'      => 'attachment',
+                            'post_parent'    => $post->ID,
+                            'posts_per_page' => -1,
+                            'order'          => 'ASC',
+                            'orderby'        => 'menu_order'
+                        );
                         $atts = get_posts($args);
                         //echo '<pre>';print_r($atts);
                         if($atts):
@@ -50,7 +59,7 @@ foreach($terms as $term){
                 <div class="content">
                     <?php the_title('<h3>','</h3>'); ?>
                     <p><span>Brief: </span><?php echo get_the_content(); ?> </p>
-                    <p><span>Rationale: </span><?php echo get_post_meta(get_the_id(), 'r_rational', true); ?></p>
+                    <?php echo $rationale; ?>
                 </div>
                 <?php
 		    $arrow = get_template_directory_uri(). '/images/nav-arrow.png';
